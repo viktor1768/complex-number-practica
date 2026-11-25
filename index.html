@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Комплексные числа: варианты 5, 6, 17 (6 графиков на вариант)</title>
+    <script>
+        MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js" charset="utf-8"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 30px;
+            border-left: 5px solid #3498db;
+            padding-left: 10px;
+        }
+        h3 {
+            color: #e67e22;
+            margin-top: 20px;
+        }
+        .variant-box {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .data {
+            font-weight: bold;
+            background: #e8f4fc;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        .step {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #ddd;
+        }
+        .formula {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+        .result {
+            background: #e9f7ef;
+            border-left: 4px solid #27ae60;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .plot-container {
+            width: 100%;
+            height: 400px;
+            margin: 10px 0 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Комплексные числа: варианты 5, 6, 17</h1>
+<p style="text-align:center; color:#7f8c8d;">Для каждого числа (A, A*, B, B*, C, D) построен отдельный график на комплексной плоскости.</p>
+
+<!-- ================= ВАРИАНТ 5 ================= -->
+<div class="variant-box">
+    <h2>Вариант 5: ДЕНИСОВ Ярослав Витальевич</h2>
+    <div class="data">
+        \( A = -3 + 5i \) <br>
+        \( B = 2 \cdot (\cos(2\pi/3) + i \cdot \sin(2\pi/3)) \)
+    </div>
+
+    <!-- Этап 1: A -->
+    <div class="step">
+        <h3>Этап 1. Число A</h3>
+        <p>Алгебраическая форма: \( A = -3 + 5i \).</p>
+        <p>Модуль: \( |A| = \sqrt{(-3)^2 + 5^2} = \sqrt{34} \approx 5.831 \).</p>
+        <p>Аргумент (II четверть): \( \phi_A = \operatorname{arctg}(5/-3) + \pi \approx 2.112 \text{ рад} \).</p>
+        <div class="result">
+            Тригонометрическая: \( A = 5.831 \cdot (\cos(2.112) + i \cdot \sin(2.112)) \)<br>
+            Показательная: \( A = 5.831 \cdot e^{i \cdot 2.112} \)
+        </div>
+        <div id="plot5_A" class="plot-container"></div>
+    </div>
+
+    <!-- Этап 2: A* -->
+    <div class="step">
+        <h3>Этап 2. Число A* (сопряжённое A)</h3>
+        <p>Алгебраическая форма: \( A^* = -3 - 5i \).</p>
+        <p>Модуль: \( |A^*| = \sqrt{34} \approx 5.831 \).</p>
+        <p>Аргумент (III четверть): \( \phi_A^* = \operatorname{arctg}(-5/-3) - \pi \approx -2.112 \text{ рад} \).</p>
+        <div class="result">
+            Тригонометрическая: \( A^* = 5.831 \cdot (\cos(-2.112) + i \cdot \sin(-2.112)) \)<br>
+            Показательная: \( A^* = 5.831 \cdot e^{-i \cdot 2.112} \)
+        </div>
+        <div id="plot5_Astar" class="plot-container"></div>
+    </div>
+
+    <!-- Этап 3: B -->
+    <div class="step">
+        <h3>Этап 3. Число B</h3>
+        <p>Исходная форма: \( B = 2 \cdot (\cos(2\pi/3) + i \cdot \sin(2\pi/3)) \).</p>
+        <p>Модуль: \( r_B = 2 \), аргумент: \( \phi_B = 2\pi/3 \approx 2.094 \text{ рад} \).</p>
+        <div class="formula">
+            \( x_B = 2\cos(2\pi/3) = -1 \), \( y_B = 2\sin(2\pi/3) = \sqrt{3} \approx 1.732 \)
+        </div>
+        <div class="result">
+            Алгебраическая: \( B = -1 + 1.732i \)<br>
+            Показательная: \( B = 2 \cdot e^{i \cdot 2.094} \)
+        </div>
+        <div id="plot5_B" class="plot-container"></div>
+    </div>
+
+    <!-- Этап 4: B* -->
+    <div class="step">
+        <h3>Этап 4. Число B* (сопряжённое B)</h3>
+        <p>Алгебраическая форма: \( B^* = -1 - 1.732i \).</p>
+        <p>Модуль: \( r_B^* = 2 \), аргумент: \( \phi_B^* = -2\pi/3 \approx -2.094 \text{ рад} \).</p>
+        <div class="result">
+            Тригонометрическая: \( B^* = 2 \cdot (\cos(-2.094) + i \cdot \sin(-2.094)) \)<br>
+            Показательная: \( B^* = 2 \cdot e^{-i \cdot 2.094} \)
+        </div>
+        <div id="plot5_Bstar" class="plot-container"></div>
+    </div>
+
+    <!-- Этап 5: C = A·B -->
+    <div class="step">
+        <h3>Этап 5. Число C = A · B</h3>
+        <div class="formula">
+            \( r_C = r_A \cdot r_B = 5.831 \cdot 2 = 11.662 \)<br>
+            \( \phi_C = \phi_A + \phi_B = 2.112 + 2.094 = 4.206 \text{ рад} \)
+        </div>
+        <div class="result">
+            Показательная: \( C = 11.662 \cdot e^{i \cdot 4.206} \)<br>
+            Тригонометрическая: \( C = 11.662 \cdot (\cos(4.206) + i \cdot \sin(4.206)) \)<br>
+            Алгебраическая: \( C = -5.574 - 10.239i \)
+        </div>
+        <div id="plot5_C" class="plot-container"></div>
+    </div>
+
+    <!-- Этап 6: D = A - B -->
+    <div class="step">
+        <h3>Этап 6. Число D = A - B</h3>
+        <div class="formula">
+            \( x_D = -3 - (-1) = -2 \), \( y_D = 5 - 1.732 = 3.268 \)
+        </div>
+        <div class="result">
+            Алгебраическая: \( D = -2 + 3.268i \)<br>
+            Модуль: \( r_D \approx 3.831 \), аргумент: \( \phi_D \approx 2.121 \text{ рад} \)<br>
+            Тригонометрическая: \( D = 3.831 \cdot (\cos(2.121) + i \cdot \sin(2.121)) \)<br>
+            Показательная: \( D = 3.831 \cdot e^{i \cdot 2.121} \)
+        </div>
+        <div id="plot5_D" class="plot-container"></div>
+    </div>
+</div>
+
+<!-- ================= ВАРИАНТ 6 ================= -->
+<div class="variant-box">
+    <h2>Вариант 6: ДЕРИШЕВ Виктор Павлович</h2>
+    <div class="data">
+        \( A = 4 - 7i \) <br>
+        \( B = 6 \cdot (\cos(5\pi/6) + i \cdot \sin(5\pi/6)) \)
+    </div>
+
+    <!-- Этап 1: A -->
+    <div class="step">
+        <h3>Этап 1. Число A</h3>
+        <p>Алгебраическая форма: \( A = 4 - 7i \).</p>
+        <p>Модуль: \( |A| = \sqrt{4^2 + (-7)^2} = \sqrt{65} \approx 8.062 \).</p>
+        <p>Аргумент (IV четверть): \( \phi_A = \operatorname{arctg}(-7/4) \approx -1.052 \text{ рад} \).</p>
+        <div class="result">
+            Тригонометрическая: \( A = 8.062 \cdot (\cos(-1.052) + i \cdot \sin(-1.052)) \)<br>
+            Показательная: \( A = 8.062 \cdot e^{-i \cdot 1.052} \)
+        </div>
+        <div id="plot6_A" class="plot-container"></div>
+    </div>
+
+    <!-- Этап 2: A* -->
+    <div class="step">
+        <h3>Этап 2. Число A* (сопряжённое A)</h3>
+        <p>Алгебраическая форма: \( A^* = 4 + 7i \).</p>
+        <p>Модуль: \( |A^*| = \sqrt{65} \approx 8.062 \).</p>
+        <p>Аргумент (I четверть): \( \phi_A^* = \operatorname{arctg}(7/4) \approx 1.052 \text{ рад} \).</p>
+        <div class="result">
+            Тригонометрическая: \( A^* = 8.062 \cdot (\cos(1.052) + i \cdot \sin(1.052)) \)<br>
+            Показательная: \( A^* = 8.062 \cdot e^{i \cdot 1.052} \)
+        </div>
+        <div id="plot6_Astar" class="plot-container"></div>
+    </div>
+
+    <!-- Этап 3: B -->
+    <div class="step">
+        <h3>Этап 3. Число B</h3>
+        <p>Исходная форма: \( B = 6 \cdot (\cos(5\pi/6) + i \cdot \sin(5\pi/6)) \).</p>
+        <p>Модуль: \( r_B = 6 \), аргумент: \( \phi_B = 5\pi/6 \approx 2.618 \text{ рад} \).</p>
+        <div class="formula">
+            \( x_B = 6\cos(5\pi/6) = -3\sqrt{3} \approx -5.196 \), \( y_B = 6\sin(5\pi/6) = 3 \)
+        </div>
+        <div class="result">
+            Алгебраическая: \( B = -5.196 + 3i \)<br>
+            Показательная: \( B = 6 \cdot e^{i \cdot 2.618} \)
+        </div>
+        <div id="plot6_B" class="plot-container"></div>
+    </div>
+
+    <!-- Этап 4: B* -->
+    <div class="step">
+        <h3>Этап 4. Число B* (сопряжённое B)</h3>
+        <p>Алгебраическая форма: \( B^* = -5.196 - 3i \).</p>
+        <p>Модуль: \( r_B^* = 6 \), аргумент: \( \phi_B^* = -5\pi/6 \approx -2.618 \text{ рад} \).</p>
+        <div class="result">
+            Тригонометрическая: \( B^* = 6 \cdot (\cos(-2.618) + i \cdot \sin(-2.618)) \)<br>
+            Показательная: \( B^* = 6 \cdot e^{-i \cdot 2.618} \)
+        </div>
+        <div id="plot6_Bstar" class="plot-container"></div>
+    </div>
+
+    <!-- Этап 5: C = A·B -->
+    <div class="step">
+        <h3>Этап 5. Число C = A · B</h3>
+        <div class="formula">
+            \( r_C = r_A \cdot r_B = 8.062 \cdot 6 = 48.372 \)<br>
+            \( \phi_C = \phi_A + \phi_B = -1.052 + 2.618 = 1.566 \text{ рад} \)
+        </div>
+        <div class="result">
+            Показательная: \( C = 48.372 \cdot e^{i \cdot 1.566} \)<br>
+            Тригонометрическая: \( C = 48.372 \cdot (\cos(1.566) + i \cdot \sin(1.566)) \)<br>
+            Алгебраическая: \( C = 0.232 + 48.371i \)
+        </div>
+        <div id="plot6_C" class="plot-container"></div>
+    </div>
+
+    <!-- Этап 6: D = A - B -->
+    <div class="step">
+        <h3>Этап 6. Число D = A - B</h3>
+        <div class="formula">
+            \( x_D = 4 - (-5.196) = 9.196 \), \( y_D = -7 - 3 = -10 \)
+        </div>
+        <div class="result">
+            Алгебраическая: \( D = 9.196 - 10i \)<br>
+            Модуль: \( r_D \approx 13.585 \), аргумент: \( \phi_D \approx -0.827 \text{ рад} \)<br>
+            Тригонометрическая: \( D = 13.585 \cdot (\cos(-0.827) + i \cdot \sin(-0.827)) \)<br>
+            Показательная: \( D = 13.585 \cdot e^{-i \cdot 0.827} \)
+        </div>
+        <div id="plot6_D" class="plot-container"></div>
+    </div>
+</div>
+
+<!-- ================= ВАРИАНТ 17 ================= -->
+<div class="variant-box">
+    <h2>Вариант 17: СТАРНИКОВ Руслан Русланович</h2>
+    <div class="data">
+        \( A = -9 + 2i \) <br>
+        \( B = 4 \cdot (\cos(\pi/4) + i \cdot \sin(\pi/4)) \)
+    </div>
+
+    <!-- Этап 1: A -->
+    <div class="step">
+        <h3>Этап 1. Число A</h3>
+        <p>Алгебраическая форма: \( A = -9 + 2i \).</p>
+        <p>Модуль: \( |A| = \sqrt{(-9)^2 + 2^2} = \sqrt{85} \approx 9.220 \).</p>
+        <p>Аргумент (II четверть): \( \phi_A = \operatorname{arctg}(2/-9) + \pi \approx 2.924 \text{ рад} \).</p>
+        <div class="result">
+            Тригонометрическая: \( A = 9.220 \cdot (\cos(2.924) + i \cdot \sin(2.924)) \)<br>
+            Показательная: \( A = 9.220 \cdot e^{i \cdot 2.924} \)
+        </div>
+        <div id="plot17_A" class="plot-container"></div>
+    </div>
+
+    <!-- Этап 2: A* -->
+    <div class="step">
+        <h3>Этап 2. Число A* (сопряжённое A)</h3>
+        <p>Алгебраическая форма: \( A^* = -9 - 2i \).</p>
+        <p>Модуль: \( |A^*| = \sqrt{85} \approx 9.220 \).</p>
+        <p>Аргумент (III четверть): \( \phi_A^* = \operatorname{arctg}(-2/-9) - \pi \approx -2.924 \text{ рад} \).</p>
+        <div class="result">
+            Тригонометрическая: \( A^* = 9.220 \cdot (\cos(-2.924) + i \cdot \sin(-2.924)) \)<br>
+            Показательная: \( A^* = 9.220 \cdot e^{-i \cdot 2.924} \)
+        </div>
+        <div id="plot17_Astar" class="plot-container"></div>
+    </div>
+
+    <!-- Этап 3: B -->
+    <div class="step">
+        <h3>Этап 3. Число B</h3>
+        <p>Исходная форма: \( B = 4 \cdot (\cos(\pi/4) + i \cdot \sin(\pi/4)) \).</p>
+        <p>Модуль: \( r_B = 4 \), аргумент: \( \phi_B = \pi/4 \approx 0.785 \text{ рад} \).</p>
+        <div class="formula">
+            \( x_B = 4\cos(\pi/4) = 2\sqrt{2} \approx 2.828 \), \( y_B = 4\sin(\pi/4) = 2\sqrt{2} \approx 2.828 \)
+        </div>
+        <div class="result">
+            Алгебраическая: \( B = 2.828 + 2.828i \)<br>
+            Показательная: \( B = 4 \cdot e^{i \cdot 0.785} \)
+        </div>
+        <div id="plot17_B" class="plot-container"></div>
+    </div>
+
+    <!-- Этап 4: B* -->
+    <div class="step">
+        <h3>Этап 4. Число B* (сопряжённое B)</h3>
+        <p>Алгебраическая форма: \( B^* = 2.828 - 2.828i \).</p>
+        <p>Модуль: \( r_B^* = 4 \), аргумент: \( \phi_B^* = -\pi/4 \approx -0.785 \text{ рад} \).</p>
+        <div class="result">
+            Тригонометрическая: \( B^* = 4 \cdot (\cos(-0.785) + i \cdot \sin(-0.785)) \)<br>
+            Показательная: \( B^* = 4 \cdot e^{-i \cdot 0.785} \)
+        </div>
+        <div id="plot17_Bstar" class="plot-container"></div>
+    </div>
+
+    <!-- Этап 5: C = A·B -->
+    <div class="step">
+        <h3>Этап 5. Число C = A · B</h3>
+        <div class="formula">
+            \( r_C = r_A \cdot r_B = 9.220 \cdot 4 = 36.880 \)<br>
+            \( \phi_C = \phi_A + \phi_B = 2.924 + 0.785 = 3.709 \text{ рад} \)
+        </div>
+        <div class="result">
+            Показательная: \( C = 36.880 \cdot e^{i \cdot 3.709} \)<br>
+            Тригонометрическая: \( C = 36.880 \cdot (\cos(3.709) + i \cdot \sin(3.709)) \)<br>
+            Алгебраическая: \( C = -31.016 - 19.952i \)
+        </div>
+        <div id="plot17_C" class="plot-container"></div>
+    </div>
+
+    <!-- Этап 6: D = A - B -->
+    <div class="step">
+        <h3>Этап 6. Число D = A - B</h3>
+        <div class="formula">
+            \( x_D = -9 - 2.828 = -11.828 \), \( y_D = 2 - 2.828 = -0.828 \)
+        </div>
+        <div class="result">
+            Алгебраическая: \( D = -11.828 - 0.828i \)<br>
+            Модуль: \( r_D \approx 11.857 \), аргумент: \( \phi_D \approx -3.072 \text{ рад} \)<br>
+            Тригонометрическая: \( D = 11.857 \cdot (\cos(-3.072) + i \cdot \sin(-3.072)) \)<br>
+            Показательная: \( D = 11.857 \cdot e^{-i \cdot 3.072} \)
+        </div>
+        <div id="plot17_D" class="plot-container"></div>
+    </div>
+</div>
+
+<script>
+    // Универсальная функция для рисования одного комплексного числа
+    function drawSingleComplex(divId, re, im, label, color) {
+        const trace = {
+            x: [0, re],
+            y: [0, im],
+            mode: 'lines+markers+text',
+            text: ['', label],
+            textposition: 'top right',
+            marker: { size: 12, color: color },
+            line: { width: 2, color: color },
+            type: 'scatter',
+            hovertemplate: `Re: ${re}<br>Im: ${im}<extra></extra>`
+        };
+
+        // Определяем границы осей с запасом
+        const maxAbs = Math.max(Math.abs(re), Math.abs(im), 1);
+        const limit = maxAbs * 1.4;
+
+        const layout = {
+            title: { text: `Число ${label}`, font: { size: 16 } },
+            xaxis: {
+                title: 'Re(z)',
+                zeroline: true,
+                zerolinecolor: '#000',
+                zerolinewidth: 2,
+                gridcolor: '#eee',
+                range: [-limit, limit]
+            },
+            yaxis: {
+                title: 'Im(z)',
+                zeroline: true,
+                zerolinecolor: '#000',
+                zerolinewidth: 2,
+                gridcolor: '#eee',
+                range: [-limit, limit],
+                scaleanchor: 'x',
+                scaleratio: 1
+            },
+            showlegend: false,
+            margin: { l: 60, r: 40, t: 50, b: 60 }
+        };
+
+        Plotly.newPlot(divId, [trace], layout);
+    }
+
+    window.addEventListener('load', function() {
+        // Вариант 5
+        drawSingleComplex('plot5_A', -3, 5, 'A', '#e74c3c');
+        drawSingleComplex('plot5_Astar', -3, -5, 'A*', '#c0392b');
+        drawSingleComplex('plot5_B', -1, 1.732, 'B', '#3498db');
+        drawSingleComplex('plot5_Bstar', -1, -1.732, 'B*', '#2980b9');
+        drawSingleComplex('plot5_C', -5.574, -10.239, 'C', '#27ae60');
+        drawSingleComplex('plot5_D', -2, 3.268, 'D', '#8e44ad');
+
+        // Вариант 6
+        drawSingleComplex('plot6_A', 4, -7, 'A', '#e74c3c');
+        drawSingleComplex('plot6_Astar', 4, 7, 'A*', '#c0392b');
+        drawSingleComplex('plot6_B', -5.196, 3, 'B', '#3498db');
+        drawSingleComplex('plot6_Bstar', -5.196, -3, 'B*', '#2980b9');
+        drawSingleComplex('plot6_C', 0.232, 48.371, 'C', '#27ae60');
+        drawSingleComplex('plot6_D', 9.196, -10, 'D', '#8e44ad');
+
+        // Вариант 17
+        drawSingleComplex('plot17_A', -9, 2, 'A', '#e74c3c');
+        drawSingleComplex('plot17_Astar', -9, -2, 'A*', '#c0392b');
+        drawSingleComplex('plot17_B', 2.828, 2.828, 'B', '#3498db');
+        drawSingleComplex('plot17_Bstar', 2.828, -2.828, 'B*', '#2980b9');
+        drawSingleComplex('plot17_C', -31.016, -19.952, 'C', '#27ae60');
+        drawSingleComplex('plot17_D', -11.828, -0.828, 'D', '#8e44ad');
+    });
+</script>
+
+</body>
+</html>
